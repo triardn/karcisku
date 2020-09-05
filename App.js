@@ -3,14 +3,14 @@ import AppNavigation from './src/routes';
 import firebase from '@react-native-firebase/app';
 
 var firebaseConfig = {
-  apiKey: 'AIzaSyBlHSn4y0WQ3ETVTXD6Zupyf8atTSL2zHo',
-  authDomain: 'sanbercode-2effb.firebaseapp.com',
-  databaseURL: 'https://sanbercode-2effb.firebaseio.com',
-  projectId: 'sanbercode-2effb',
-  storageBucket: 'sanbercode-2effb.appspot.com',
-  messagingSenderId: '333799621476',
-  appId: '1:333799621476:web:a1c881526db15314fff071',
-  measurementId: 'G-YJNE6V5EW1',
+  apiKey: 'AIzaSyC98Vjg0ymMNGG3rzIBNToayb22yGo4v9A',
+  authDomain: 'karcisku-97f1f.firebaseapp.com',
+  databaseURL: 'https://karcisku-97f1f.firebaseio.com',
+  projectId: 'karcisku-97f1f',
+  storageBucket: 'karcisku-97f1f.appspot.com',
+  messagingSenderId: '986703949408',
+  appId: '1:986703949408:web:e6cf516b879d1db6e09d05',
+  measurementId: 'G-Z0DP3LD6HR',
 };
 
 // Initialize Firebase

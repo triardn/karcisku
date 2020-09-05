@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "986703949408",
+    "firebase_url": "https://karcisku-97f1f.firebaseio.com",
+    "project_id": "karcisku-97f1f",
+    "storage_bucket": "karcisku-97f1f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986703949408:android:98bcd6d8fc14205de09d05",
+        "android_client_info": {
+          "package_name": "com.karcisku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986703949408-aeoum73ghjh1p7o04mkl8iscv0lo6aff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVAKZiv_i5bA8j3Pn0t1thnKswN6P0YLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986703949408-aeoum73ghjh1p7o04mkl8iscv0lo6aff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
