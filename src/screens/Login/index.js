@@ -43,6 +43,7 @@ function Login({navigation}) {
   const saveToken = async (token) => {
     try {
       await Asyncstorage.setItem('token', token);
+      await Asyncstorage.setItem('username', email);
     } catch (err) {
       showToast('Gagal menyimpan token');
       console.log(err);
