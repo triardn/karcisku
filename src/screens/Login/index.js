@@ -57,7 +57,7 @@ function Login({navigation}) {
     GoogleSignin.configure({
       offlineAccess: false,
       webClientId:
-        '333799621476-elkvc9i2iqenvjbn2rscsno7d6a02205.apps.googleusercontent.com',
+        '986703949408-aeoum73ghjh1p7o04mkl8iscv0lo6aff.apps.googleusercontent.com',
     });
   };
 
@@ -67,7 +67,7 @@ function Login({navigation}) {
       const credential = auth.GoogleAuthProvider.credential(idToken);
 
       auth().signInWithCredential(credential);
-      navigation.navigate('Profile');
+      navigation.navigate('Home');
     } catch (err) {
       showToast('Gagal login dengan Google. Silakan coba beberapa saat lagi');
       console.log('signInWithGoogle -> err', err);
@@ -84,7 +84,7 @@ function Login({navigation}) {
     })
       .then((res) => {
         saveToken(res.data.token);
-        navigation.navigate('Profile');
+        navigation.navigate('Home');
       })
       .catch((err) => {
         showToast('Gagal login. Silakan coba beberapa saat lagi');
@@ -95,7 +95,7 @@ function Login({navigation}) {
   const signInWithFingerPrint = () => {
     TouchID.authenticate('', config)
       .then((success) => {
-        navigation.navigate('Profile');
+        navigation.navigate('Home');
       })
       .catch((err) => {
         console.log('login -> res', err);
