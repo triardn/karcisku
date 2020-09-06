@@ -144,7 +144,7 @@ const Home = ({navigation}) => {
               height: 23,
               width: 100,
             }}
-            onPress={() => navigation.navigate('Profile')}>
+            onPress={() => showToast('Fitur ini belum bisa digunakan')}>
             <Text style={{color: 'white'}}>Edit profile</Text>
           </TouchableOpacity>
         </View>
