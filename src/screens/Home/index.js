@@ -133,7 +133,7 @@ const Home = ({navigation}) => {
               ? userInfo.user.name
               : username
               ? username
-              : '-'}
+              : 'Login by Touch-ID'}
           </Text>
           <TouchableOpacity
             style={{
