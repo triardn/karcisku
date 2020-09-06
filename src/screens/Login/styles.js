@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     borderBottomColor: '#C6C6C6',
   },
   buttonLogin: {
-    backgroundColor: '#3EC6FF',
+    backgroundColor: '#8B0000',
     height: 35,
     alignItems: 'center',
     justifyContent: 'center',
