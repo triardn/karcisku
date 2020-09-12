@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    color: '#191970',
+    color: '#924444',
     fontSize: 24,
     textAlign: 'center',
     fontWeight: 'bold',
@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     borderRadius: 100,
     width: 45,
     height: 45,
-    backgroundColor: '#191970',
+    backgroundColor: '#8B0000',
     alignItems: 'center',
     justifyContent: 'center',
   },

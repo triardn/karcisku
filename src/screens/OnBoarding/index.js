@@ -40,10 +40,33 @@ const slides = [
 const OnBoarding = ({navigation}) => {
   //menampilkan data slides kedalam renderItem
   const renderItem = ({item}) => {
+    let iconName = '';
+    switch (item.key) {
+      case 1:
+        iconName = 'clock-fast';
+        break;
+      case 2:
+        iconName = 'seal-variant';
+        break;
+      case 3:
+        iconName = 'brightness-percent';
+        break;
+      case 4:
+        iconName = 'video-plus-outline';
+        break;
+      default:
+        iconName = 'clock-fast';
+    }
+
     return (
       <View style={styles.slide}>
         <Text style={styles.title}>{item.title}</Text>
-        <Image source={item.image} style={styles.image} />
+        <MaterialIcon
+          name={iconName}
+          size={250}
+          style={{alignSelf: 'center', marginVertical: 30}}
+          color="#8B0000"
+        />
         <Text style={styles.text}>{item.text}</Text>
       </View>
     );
@@ -89,7 +112,7 @@ const OnBoarding = ({navigation}) => {
           renderDoneButton={renderDoneButton}
           renderNextButton={renderNextButton}
           keyExtractor={(item, index) => index.toString()}
-          activeDotStyle={{backgroundColor: '#191970'}}
+          activeDotStyle={{backgroundColor: '#8B0000'}}
         />
       </View>
     </View>
