@@ -1,11 +1,21 @@
 {
   "events": [
     {
+      "id": "10",
+      "title": "Twiceland Zone 2",
+      "description": "Twiceland Zone 2 Fantasy Park in Jakarta",
+      "author": "Twice",
+      "date": "25 Agustus 2020 - 19.00 WIB",
+      "place": "ICE BSD",
+      "image": "https://static.bmdstatic.com/pk/product/medium/5d2edfcf1f765.jpg",
+      "price": "1800000"
+    },
+    {
       "id": "1",
       "title": "Komoidoumenoi",
       "description": "A standup comedy world tour by Pandji Pragiwaksono",
       "author": "Pandji Pragiwaksono",
-      "date": "20 december 2020 - 19.00 WIB",
+      "date": "20 December 2020 - 19.00 WIB",
       "place": "Istora Senayan",
       "image": "https://static.bmdstatic.com/pk/product/medium/5d2edfcf1f765.jpg",
       "price": "1000000"
@@ -15,7 +25,7 @@
       "title": "Pidato Presiden",
       "description": "A standup comedy show by Awwe",
       "author": "Awwe",
-      "date": "10 october 2020",
+      "date": "10 October 2020",
       "place": "I3L Campus",
       "image": "https://static.bmdstatic.com/pk/product/medium/5d2edfcf1f765.jpg",
       "price": "200000"
@@ -25,18 +35,17 @@
       "title": "Personal Branding",
       "description": "A standup comedy show by Barry Williem",
       "author": "Barry Williem",
-      "date": "2 november 2020",
+      "date": "2 November 2020",
       "place": "Ke.ta.wa Comedy Club",
       "image": "https://static.bmdstatic.com/pk/product/medium/5d2edfcf1f765.jpg",
       "price": "150000"
     },
     {
       "id": "4",
-      "id": "10",
       "title": "Raisa Live in Jakarta 2020",
       "description": "Raisa Live In Concert at Stadion Utama Gelora Bung Karno",
       "author": "Raisa",
-      "date": "28 november 2020",
+      "date": "28 November 2020",
       "place": "Stadion GBK",
       "image": "https://static.bmdstatic.com/pk/product/medium/5d2edfcf1f765.jpg",
       "price": "189000"
@@ -46,7 +55,7 @@
       "title": "Sohibul Diksi",
       "description": "A group standup comedy show by Sohibul Diksi",
       "author": "Sohibul Diksi",
-      "date": "1 september 2020",
+      "date": "1 September 2020",
       "place": "Ke.ta.wa Comedy Club",
       "image": "https://static.bmdstatic.com/pk/product/medium/5d2edfcf1f765.jpg",
       "price": "100000"
@@ -56,7 +65,7 @@
       "title": "Alinea",
       "description": "A standup comedy tour by Erwin",
       "author": "Erwin",
-      "date": "4 september 2020",
+      "date": "4 September 2020",
       "place": "Gedung Kesenian Jakarta",
       "image": "https://static.bmdstatic.com/pk/product/medium/5d2edfcf1f765.jpg",
       "price": "150000"
@@ -66,7 +75,7 @@
       "title": "Investing Basics",
       "description": "Parentalk dan ZAP Finance berkolaborasi kembali untuk membuat kelas webinar dengan judul Investing Basics",
       "author": "Parentalk X ZAP",
-      "date": "8 september 2020 - 19.00 WIB",
+      "date": "8 September 2020 - 19.00 WIB",
       "place": "Online Event",
       "image": "https://static.bmdstatic.com/pk/product/medium/5d2edfcf1f765.jpg",
       "price": "99000"
@@ -76,7 +85,7 @@
       "title": "JAZZVERSITY",
       "description": "Jazzversity menampilkan online music concert sekaligus kolaborasi pertama bagi ITBJazz dan ITS Jazz yang dilakukan jarak jauh dari berbagai kota di Indonesia.",
       "author": "ITBJazz X ITSJazz",
-      "date": "7 september 2020 - 19.00 WIB",
+      "date": "7 September 2020 - 19.00 WIB",
       "place": "Event Online",
       "image": "https://static.bmdstatic.com/pk/product/medium/5d2edfcf1f765.jpg",
       "price": "Free"
@@ -86,7 +95,7 @@
       "title": "Forum Ayah Nakal",
       "description": "A standup comedy show by David Nurbianto with guests",
       "author": "David Nurbianto",
-      "date": "20 september 2020",
+      "date": "20 September 2020",
       "place": "Event Online",
       "image": "https://static.bmdstatic.com/pk/product/medium/5d2edfcf1f765.jpg",
       "price": "100000"
