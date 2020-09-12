@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
   },
   textColorBlue: {
-    color: 'blue',
+    color: '#924444',
   },
   separatorContainer: {
     flexDirection: 'row',

@@ -107,7 +107,10 @@ function Login({navigation}) {
     <View style={styles.container} backgroundColor="#ffffff">
       <StatusBar backgroundColor="grey" barStyle="light-content" />
       <View style={styles.loginContainer}>
-        <Image source={require('../../assets/images/logo.jpg')} />
+        <Image
+          source={require('../../assets/images/karcisku-logo.png')}
+          style={{width: 250, height: 250, alignSelf: 'center', marginTop: 30}}
+        />
         <View style={styles.inputContainer}>
           <View style={styles.inputItem}>
             <Text>Username</Text>
@@ -146,7 +149,7 @@ function Login({navigation}) {
           />
           <Button
             style={styles.buttonFingerPrintSignin}
-            color="#191970"
+            color="#924444"
             title="Sign in with Finger Print"
             onPress={() => signInWithFingerPrint()}
           />

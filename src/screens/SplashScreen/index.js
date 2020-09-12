@@ -6,7 +6,7 @@ function SplashScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
-        <Image source={require('../../assets/images/karcisku.png')} />
+        <Image source={require('../../assets/images/karcisku-logo.png')} />
       </View>
     </View>
   );
