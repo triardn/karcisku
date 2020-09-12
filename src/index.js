@@ -10,6 +10,7 @@ import Profile from './screens/Profile';
 import Register from './screens/Register';
 import Maps from './screens/Maps';
 import Chat from './screens/Chat';
+import Statistics from './screens/Statistics';
 
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -65,6 +66,11 @@ const MainNavigation = () => (
       options={{headerShown: false}}
     />
     <Stack.Screen name="Register" component={Register} />
+    <Stack.Screen
+      name="Stats"
+      component={Statistics}
+      options={{headerShown: true, title: 'Statistik Acara'}}
+    />
   </Stack.Navigator>
 );
 

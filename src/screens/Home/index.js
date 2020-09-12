@@ -139,7 +139,6 @@ const Home = ({navigation}) => {
           marginLeft: 20,
           marginRight: 20,
         }}>
-        {/* <FAIcon name="user-circle" size={50} color="#8B0000" /> */}
         <RenderProfile
           avatarUrl={
             userInfo && userInfo.user && userInfo.user.photo
@@ -191,7 +190,8 @@ const Home = ({navigation}) => {
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: 5,
-        }}>
+        }}
+        onPress={() => navigation.navigate('Stats')}>
         <Text style={{color: '#FFFFFF'}}>Lihat Statistik Acara</Text>
       </TouchableOpacity>
       <View style={{flex: 1, marginTop: 10, marginBottom: 10}}>
