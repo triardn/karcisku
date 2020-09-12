@@ -17,14 +17,13 @@ import api from '../../api/index';
 import auth from '@react-native-firebase/auth';
 import {
   GoogleSignin,
-  statusCode,
   GoogleSigninButton,
 } from '@react-native-community/google-signin';
 import TouchID from 'react-native-touch-id';
 
 const config = {
   title: 'Authentication Required',
-  imageColor: '#191970',
+  imageColor: '#8B0000',
   imageErrorColor: 'red',
   sensorDescription: 'Touch Sensor',
   sensorErrorDescription: 'Login Failed',
@@ -50,6 +49,18 @@ function Login({navigation}) {
     }
   };
 
+  const setLoginFlag = async () => {
+    try {
+      await Asyncstorage.setItem('isLogin', 'true');
+
+      if (email != null || email !== '') {
+        await Asyncstorage.setItem('username', email);
+      }
+    } catch (err) {
+      console.log('setLoginFlag -> err: ', err);
+    }
+  };
+
   useEffect(() => {
     configureGoogleSignIn();
   }, []);
@@ -68,7 +79,13 @@ function Login({navigation}) {
       const credential = auth.GoogleAuthProvider.credential(idToken);
 
       auth().signInWithCredential(credential);
-      navigation.navigate('Home');
+
+      setLoginFlag();
+
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'Home'}],
+      });
     } catch (err) {
       showToast('Gagal login dengan Google. Silakan coba beberapa saat lagi');
       console.log('signInWithGoogle -> err', err);
@@ -76,27 +93,30 @@ function Login({navigation}) {
   };
 
   const onLoginPress = () => {
-    let data = {
-      email: email,
-      password: password,
-    };
-    Axios.post(`${api}/login`, data, {
-      timeout: 2000,
-    })
+    return auth()
+      .signInWithEmailAndPassword(email, password)
       .then((res) => {
-        saveToken(res.data.token);
-        navigation.navigate('Home');
+        setLoginFlag();
+
+        navigation.reset({
+          index: 0,
+          routes: [{name: 'Home'}],
+        });
       })
       .catch((err) => {
-        showToast('Gagal login. Silakan coba beberapa saat lagi');
-        console.log('login -> res', err);
+        console.log('onLoginPress -> err: ', err);
       });
   };
 
   const signInWithFingerPrint = () => {
     TouchID.authenticate('', config)
       .then((success) => {
-        navigation.navigate('Home');
+        setLoginFlag();
+
+        navigation.reset({
+          index: 0,
+          routes: [{name: 'Home'}],
+        });
       })
       .catch((err) => {
         console.log('login -> res', err);

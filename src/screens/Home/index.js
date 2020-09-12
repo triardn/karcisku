@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ToastAndroid,
   ActivityIndicator,
+  Image,
 } from 'react-native';
 import {styles} from './styles';
 import FAIcon from 'react-native-vector-icons/FontAwesome5';
@@ -15,7 +16,7 @@ import data from './data.json';
 import Axios from 'axios';
 import Asyncstorage from '@react-native-community/async-storage';
 import api from '../../api/index';
-import {GoogleSignin, statusCode} from '@react-native-community/google-signin';
+import {GoogleSignin} from '@react-native-community/google-signin';
 
 const Home = ({navigation}) => {
   const [userInfo, setUserInfo] = useState('');
@@ -31,8 +32,8 @@ const Home = ({navigation}) => {
         setIsUsingGoogle(true);
         setIsLoading(false);
       } catch (err) {
-        const username = await Asyncstorage.getItem('username');
-        setUsername(username);
+        const uname = await Asyncstorage.getItem('username');
+        setUsername(uname);
 
         setIsLoading(false);
       }
@@ -54,9 +55,12 @@ const Home = ({navigation}) => {
         await Asyncstorage.removeItem('username');
       }
 
-      showToast('Sukses logout dari aplikasi');
+      await Asyncstorage.removeItem('isLogin');
 
-      navigation.navigate('Login');
+      navigation.reset({
+        index: 0,
+        routes: [{name: 'Login'}],
+      });
     } catch (err) {
       showToast('Gagal logout. Silakan coba beberapa saat lagi');
       console.log('onLogoutPress -> err', err);
@@ -113,6 +117,19 @@ const Home = ({navigation}) => {
     );
   }
 
+  const RenderProfile = ({avatarUrl}) => {
+    if (avatarUrl !== '') {
+      return (
+        <Image
+          source={{uri: avatarUrl}}
+          style={{width: 50, height: 50, borderRadius: 20}}
+        />
+      );
+    } else {
+      return <FAIcon name="user-circle" size={50} color="#8B0000" />;
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View
@@ -122,7 +139,14 @@ const Home = ({navigation}) => {
           marginLeft: 20,
           marginRight: 20,
         }}>
-        <FAIcon name="user-circle" size={50} color="#8B0000" />
+        {/* <FAIcon name="user-circle" size={50} color="#8B0000" /> */}
+        <RenderProfile
+          avatarUrl={
+            userInfo && userInfo.user && userInfo.user.photo
+              ? userInfo.user.photo
+              : ''
+          }
+        />
         <View
           style={{
             marginLeft: 20,
@@ -157,7 +181,20 @@ const Home = ({navigation}) => {
           />
         </View>
       </View>
-      <View style={{marginTop: 20}}>
+      <TouchableOpacity
+        style={{
+          marginTop: 15,
+          width: '80%',
+          height: 30,
+          backgroundColor: '#8B0000',
+          alignSelf: 'center',
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: 5,
+        }}>
+        <Text style={{color: '#FFFFFF'}}>Lihat Statistik Acara</Text>
+      </TouchableOpacity>
+      <View style={{flex: 1, marginTop: 10, marginBottom: 10}}>
         <FlatList
           data={data.events}
           renderItem={renderItem}
