@@ -7,6 +7,7 @@ import {
   ToastAndroid,
   ActivityIndicator,
   Image,
+  Dimensions,
 } from 'react-native';
 import {styles} from './styles';
 import FAIcon from 'react-native-vector-icons/FontAwesome5';
@@ -17,6 +18,9 @@ import Axios from 'axios';
 import Asyncstorage from '@react-native-community/async-storage';
 import api from '../../api/index';
 import {GoogleSignin} from '@react-native-community/google-signin';
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 const Home = ({navigation}) => {
   const [userInfo, setUserInfo] = useState('');
@@ -90,7 +94,7 @@ const Home = ({navigation}) => {
           borderRadius: 10,
           borderColor: '#8B0000',
           paddingHorizontal: 10,
-          height: 100,
+          height: height * 0.1,
           alignItems: 'center',
           justifyContent: 'center',
         }}>
@@ -165,7 +169,7 @@ const Home = ({navigation}) => {
               alignItems: 'center',
               marginTop: 5,
               height: 23,
-              width: 100,
+              width: width * 0.22,
             }}
             onPress={() => showToast('Fitur ini belum bisa digunakan')}>
             <Text style={{color: 'white'}}>Edit profile</Text>
@@ -184,7 +188,7 @@ const Home = ({navigation}) => {
         style={{
           marginTop: 15,
           width: '80%',
-          height: 30,
+          height: '5%',
           backgroundColor: '#8B0000',
           alignSelf: 'center',
           alignItems: 'center',
