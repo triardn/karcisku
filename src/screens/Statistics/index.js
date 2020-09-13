@@ -3,13 +3,13 @@ import {View, processColor} from 'react-native';
 import {BarChart} from 'react-native-charts-wrapper';
 
 const data = [
-  {y: [100, 40, 13], marker: ['Standup Comedy', 'Music', 'Lainnya']},
-  {y: [80, 60, 21], marker: ['Standup Comedy', 'Music', 'Lainnya']},
-  {y: [40, 90, 10], marker: ['Standup Comedy', 'Music', 'Lainnya']},
-  {y: [78, 45, 7], marker: ['Standup Comedy', 'Music', 'Lainnya']},
-  {y: [67, 87, 22], marker: ['Standup Comedy', 'Music', 'Lainnya']},
-  {y: [98, 32, 30], marker: ['Standup Comedy', 'Music', 'Lainnya']},
-  {y: [150, 90, 48], marker: ['Standup Comedy', 'Music', 'Lainnya']},
+  {y: [100, 40, 13], marker: ['Standup Comedy', 'Music', 'Others']},
+  {y: [80, 60, 21], marker: ['Standup Comedy', 'Music', 'Others']},
+  {y: [40, 90, 10], marker: ['Standup Comedy', 'Music', 'Others']},
+  {y: [78, 45, 7], marker: ['Standup Comedy', 'Music', 'Others']},
+  {y: [67, 87, 22], marker: ['Standup Comedy', 'Music', 'Others']},
+  {y: [98, 32, 30], marker: ['Standup Comedy', 'Music', 'Others']},
+  {y: [150, 90, 48], marker: ['Standup Comedy', 'Music', 'Others']},
 ];
 
 const Statistics = () => {
@@ -36,7 +36,7 @@ const Statistics = () => {
                 processColor('red'),
                 processColor('green'),
               ],
-              stackLabels: ['Standup Comedy', 'Music', 'Lainnya'],
+              stackLabels: ['Standup Comedy', 'Music', 'Others'],
               drawFilled: false,
               drawValues: false,
             },
@@ -70,7 +70,7 @@ const Statistics = () => {
               processColor('red'),
               processColor('green'),
             ],
-            stackLabels: ['Standup Comedy', 'Music', 'Lainnya'],
+            stackLabels: ['Standup Comedy', 'Music', 'Others'],
             drawFilled: false,
             drawValues: false,
           },
