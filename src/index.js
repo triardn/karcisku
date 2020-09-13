@@ -14,6 +14,8 @@ import Statistics from './screens/Statistics';
 
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+import Asyncstorage from '@react-native-community/async-storage';
+
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -48,8 +50,8 @@ const BottomTabNavigator = () => (
   </Tab.Navigator>
 );
 
-const MainNavigation = () => (
-  <Stack.Navigator>
+const MainNavigation = ({isLogin}) => (
+  <Stack.Navigator initialRouteName={isLogin ? 'Home' : 'Intro'}>
     <Stack.Screen
       name="Intro"
       component={Intro}
@@ -76,9 +78,22 @@ const MainNavigation = () => (
 
 function AppNavigation() {
   const [isLoading, setIsLoading] = React.useState(true);
+  const [isLogin, setIsLogin] = React.useState(false);
 
   //mengatur durasi splashscreen saat aplikasi pertama kali dibuka
   React.useEffect(() => {
+    const checkIsLogin = async () => {
+      try {
+        const login = await Asyncstorage.getItem('isLogin');
+        if (login === 'true') {
+          setIsLogin(true);
+        }
+      } catch (err) {
+        console.log('checkIsLogin err: ', err);
+      }
+    };
+    checkIsLogin();
+
     setTimeout(() => {
       setIsLoading(!isLoading);
     }, 3000);
@@ -90,7 +105,7 @@ function AppNavigation() {
 
   return (
     <NavigationContainer>
-      <MainNavigation />
+      <MainNavigation isLogin={isLogin} />
     </NavigationContainer>
   );
 }

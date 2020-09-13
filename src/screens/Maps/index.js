@@ -8,17 +8,13 @@ MapboxGL.setAccessToken(
 
 const Maps = () => {
   const variousLocations = [
-    [107.598827, -6.896191],
-    [107.596198, -6.899688],
-    [107.618767, -6.902226],
-    [107.621095, -6.89869],
-    [107.615698, -6.896741],
-    [107.613544, -6.897713],
-    [107.613697, -6.893795],
-    [107.610714, -6.891356],
-    [107.605468, -6.893124],
-    [107.60918, -6.898013],
-    [106.781757, -6.555795],
+    [106.637, -6.298972, 'ICE BSD'],
+    [106.808503, -6.261956, 'Ke.Ta.Wa Comedy Club'],
+    [106.805675, -6.219972, 'Istora Senayan'],
+    [106.878289, -6.178951, 'I3L Campus'],
+    [106.801797, -6.218346, 'Stadion Gelora Bung Karno'],
+    [106.834433, -6.166344, 'Gedung Kesenian Jakarta'],
+    [106.825094, -6.234136, 'Balai Kartini'],
   ];
 
   useEffect(() => {
@@ -43,10 +39,8 @@ const Maps = () => {
             <MapboxGL.PointAnnotation
               key={index}
               id={`PointAnnotation${index}`}
-              coordinate={point}>
-              <MapboxGL.Callout
-                title={`Longitude : ${point[0]} \n Latitude : ${point[1]}`}
-              />
+              coordinate={[point[0], point[1]]}>
+              <MapboxGL.Callout title={`${point[2]}`} />
             </MapboxGL.PointAnnotation>
           );
         })}

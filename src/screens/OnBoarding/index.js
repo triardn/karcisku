@@ -1,9 +1,11 @@
-import React from 'react';
-import {View, Text, Image, StatusBar} from 'react-native';
+import React, {useEffect} from 'react';
+import {View, Text, StatusBar} from 'react-native';
 import {styles} from './styles';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import Icon from 'react-native-vector-icons/Ionicons';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import Asyncstorage from '@react-native-community/async-storage';
 
 //data yang akan digunakan dalam onboarding
 const slides = [
@@ -72,9 +74,34 @@ const OnBoarding = ({navigation}) => {
     );
   };
 
+  useEffect(() => {
+    const isSkipIntro = async () => {
+      try {
+        const x = await Asyncstorage.getItem('skip-intro');
+        if (x === 'true') {
+          navigation.reset({
+            index: 0,
+            routes: [{name: 'Login'}],
+          });
+        }
+      } catch (err) {
+        console.log('error when get item: ', err);
+      }
+    };
+
+    isSkipIntro();
+
+    return () => {
+      return Asyncstorage.setItem('skip-intro', 'true');
+    };
+  }, []);
+
   //fungsi ketika onboarding ada di list terakhir atau screen terakhir / ketika button done di klik
   const onDone = () => {
-    navigation.navigate('Login');
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'Login'}],
+    });
   };
 
   //mengcustom tampilan button done
