@@ -58,7 +58,7 @@ const EventDetail = ({route, navigation}) => {
       totalPay: totalAmount,
     };
 
-    console.log(summary);
+    navigation.navigate('PaymentSummary', {summary: summary});
   };
 
   if (isLoading) {
@@ -166,8 +166,20 @@ const EventDetail = ({route, navigation}) => {
               <Text>Mandiri</Text>
             </View>
           </View>
-
-          <Button color="#8B0000" title="Purchase" onPress={() => purchase()} />
+          <TouchableOpacity
+            style={{
+              backgroundColor: '#8B0000',
+              width: 388,
+              height: 40,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            disabled={ticketCounter === 0 ? true : false}
+            onPress={() => purchase()}>
+            <Text style={{color: '#ffffff', fontSize: 20, fontWeight: 'bold'}}>
+              Purchase
+            </Text>
+          </TouchableOpacity>
         </View>
       </Modal>
       <View style={{flex: 1, flexDirection: 'column'}}>

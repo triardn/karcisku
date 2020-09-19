@@ -12,6 +12,7 @@ import Maps from './screens/Maps';
 import Chat from './screens/Chat';
 import Statistics from './screens/Statistics';
 import EventDetail from './screens/EventDetail';
+import PaymentSummary from './screens/Summary';
 
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -78,6 +79,11 @@ const MainNavigation = ({isLogin}) => (
       name="EventDetail"
       component={EventDetail}
       options={({route}) => ({title: route.params.title, headerShown: true})}
+    />
+    <Stack.Screen
+      name="PaymentSummary"
+      component={PaymentSummary}
+      options={{headerShown: false}}
     />
   </Stack.Navigator>
 );
