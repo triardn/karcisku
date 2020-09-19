@@ -11,6 +11,7 @@ import Register from './screens/Register';
 import Maps from './screens/Maps';
 import Chat from './screens/Chat';
 import Statistics from './screens/Statistics';
+import EventDetail from './screens/EventDetail';
 
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -72,6 +73,11 @@ const MainNavigation = ({isLogin}) => (
       name="Stats"
       component={Statistics}
       options={{headerShown: true, title: 'Statistik Acara'}}
+    />
+    <Stack.Screen
+      name="EventDetail"
+      component={EventDetail}
+      options={{headerShown: true, title: 'Detail Acara'}}
     />
   </Stack.Navigator>
 );

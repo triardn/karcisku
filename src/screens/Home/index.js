@@ -84,31 +84,34 @@ const Home = ({navigation}) => {
 
   const renderItem = ({item, index}) => {
     return (
-      <View
-        style={{
-          marginTop: 10,
-          marginLeft: 20,
-          marginRight: 20,
-          flexDirection: 'row',
-          borderWidth: 3,
-          borderRadius: 10,
-          borderColor: '#8B0000',
-          paddingHorizontal: 10,
-          height: height * 0.1,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <View />
-        <View>
-          <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.title}</Text>
-          <Text style={{fontSize: 16}}>{item.author}</Text>
-          <Text>{item.date}</Text>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('EventDetail', {event: item})}>
+        <View
+          style={{
+            marginTop: 10,
+            marginLeft: 20,
+            marginRight: 20,
+            flexDirection: 'row',
+            borderWidth: 3,
+            borderRadius: 10,
+            borderColor: '#8B0000',
+            paddingHorizontal: 10,
+            height: height * 0.1,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <View />
+          <View>
+            <Text style={{fontSize: 20, fontWeight: 'bold'}}>{item.title}</Text>
+            <Text style={{fontSize: 16}}>{item.author}</Text>
+            <Text>{item.date}</Text>
+          </View>
+          <View style={{flex: 1, alignItems: 'flex-end'}}>
+            <Text style={{fontSize: 16, fontWeight: 'bold'}}>{item.place}</Text>
+            <Text style={{fontSize: 16}}>{formatCurrency(item.price)}</Text>
+          </View>
         </View>
-        <View style={{flex: 1, alignItems: 'flex-end'}}>
-          <Text style={{fontSize: 16, fontWeight: 'bold'}}>{item.place}</Text>
-          <Text style={{fontSize: 16}}>{formatCurrency(item.price)}</Text>
-        </View>
-      </View>
+      </TouchableOpacity>
     );
   };
 
