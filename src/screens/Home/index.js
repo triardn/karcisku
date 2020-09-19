@@ -85,7 +85,9 @@ const Home = ({navigation}) => {
   const renderItem = ({item, index}) => {
     return (
       <TouchableOpacity
-        onPress={() => navigation.navigate('EventDetail', {event: item})}>
+        onPress={() =>
+          navigation.navigate('EventDetail', {event: item, title: item.title})
+        }>
         <View
           style={{
             marginTop: 10,

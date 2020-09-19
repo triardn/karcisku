@@ -77,7 +77,7 @@ const MainNavigation = ({isLogin}) => (
     <Stack.Screen
       name="EventDetail"
       component={EventDetail}
-      options={{headerShown: true, title: 'Detail Acara'}}
+      options={({route}) => ({title: route.params.title, headerShown: true})}
     />
   </Stack.Navigator>
 );
