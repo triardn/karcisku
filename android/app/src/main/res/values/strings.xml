@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">karcisku</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">9lY0unjlNPw-HpuheTVBlZS92FrdoClrBwjpJ</string>
 </resources>

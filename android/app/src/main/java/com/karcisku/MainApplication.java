@@ -9,6 +9,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import com.github.wuxudong.rncharts.MPAndroidChartPackage;
+import com.microsoft.codepush.react.CodePush;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
@@ -34,6 +35,14 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected String getJSMainModuleName() {
       return "index";
+    }
+
+    // Override the getJSBundleFile method in order to let
+    // the CodePush runtime determine where to get the JS
+    // bundle location from on each app start
+    @Override
+    protected String getJSBundleFile() {
+      return CodePush.getJSBundleFile();
     }
   };
 
